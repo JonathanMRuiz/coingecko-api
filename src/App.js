@@ -3,7 +3,7 @@ import axios from 'axios';
 import TableCoins from './components/TableCoins/TableCoins';
 
 function App() {
-
+  
   const [coins, setCoins] = useState([])
   const [search, setSearch] = useState('')
 
@@ -15,9 +15,14 @@ function App() {
  
   useEffect (()=>{
     getData();
-  },[])
+  },[]);
+
+  
+
   return (
+    
     <div className="container">
+      
       <div className="row">
         
         <input type="text" placeholder="Buscar moneda" className="form-control bg-dark text-light border-0 mt-4 text-center" onChange={e => setSearch(e.target.value)}/>
@@ -25,6 +30,7 @@ function App() {
       </div>
       
     </div>
+    
   );
 }
 
